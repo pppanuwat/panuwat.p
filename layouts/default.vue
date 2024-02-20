@@ -11,7 +11,8 @@
 
 <style>
 .font {
-  font-family: "Merienda", cursive;
+  /* font-family: "Merienda", cursive; */
+  font-family: 'Café Françoise', sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;

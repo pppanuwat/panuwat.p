@@ -46,6 +46,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import type { ProductLiner } from "~/models/product.model";
 const shop = ref<ProductLiner[]>([
   {
