@@ -9,3 +9,11 @@ export interface MenuShops {
     img:  string | undefined
     description: string | null
 }
+
+
+export interface ProductLiner {
+    name: string
+    img:  string | undefined
+    pice: number 
+    color:string
+}

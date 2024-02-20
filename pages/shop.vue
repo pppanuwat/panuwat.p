@@ -1,19 +1,20 @@
 <template>
-  <div>
-    <div>
-      <nuxt-link to="/"> Home</nuxt-link>
-      <span> {{ route.path.replace("/", " / ") }} </span>
-    </div>
-    <div class="flex justify-center">
-      <h1 class="font-bold">SHOP</h1>
-    </div>
-    <div>
-      <div class="bg-gray-700/30 p-5 mt-2 rounded-lg">
+  <div class="">
+    <div class="">
+      <div class="w-full bg-green-100 lg:hidden">
+        <img
+          class="max-sm:absolute"
+          src="https://www.10wallpaper.com/wallpaper/1920x1200/1409/cup_of_coffee-high_quality_Wallpaper_1920x1200.jpg"
+        />
+      </div>
+      <div
+        class="w-full rounded-t-2xl bg-white p-5 max-sm:absolute max-sm:top-[18rem]"
+      >
         <!-- Menu -->
-        <div class="flex gap-4">
+        <div class="flex gap-6 pl-4">
           <div v-for="(menu, i) in menuShop" :key="i">
             <button type="button" @click="activateTab(i + 1)">
-              {{ menu.name }} <i class="fa-solid fa-cat"></i>
+              {{ menu.name }}
             </button>
           </div>
         </div>
@@ -26,36 +27,50 @@
             </div>
             <input
               type="text"
-              class="input-member pl-10 py-1 w-full rounded-lg"
+              class="input-member pl-10 py-1 w-full rounded-full border-[2px]"
             />
           </div>
         </div>
 
         <!-- product -->
         <div v-if="activeTab == 1">
-          <div class="mt-4">
+          <div
+            class="mt-4 overflow-auto max-sm:max-h-[50svh] max-sm:pr-2 lg:flex lg:grid-cols-4 lg:gap-2"
+          >
             <div
               v-for="(product, i) in itemShop"
               :key="i"
-              class="flex gap-2 mt-6"
+              class="flex gap-2 mt-6 lg:p-5 lg:rounded-lg lg:bg-gray-400/30 lg:w-[300px] drop-shadow-2xl lg:border-2 lg:mb-4"
             >
-              <img :src="product.img" class="rounded-lg w-24 h-24" />
-              <div class="truncate ... p-2">
+              <div class="max-sm:w-24 max-sm:h-24 lg:w-24 lg:h-24">
+                <img
+                  :src="product.img"
+                  class="rounded-lg w-full h-full border-2 border-gray-700"
+                />
+              </div>
+              <div class="truncate ... p-2 w-full">
                 <div>
                   <h1 class="font-bold flex items-center">
                     {{ product.name }}
                   </h1>
-                  <h2 class="text-sm flex items-center">
-                    {{ product.description }}
+                  <h2 class="text-xs flex items-center text-black/40">
+                    <!-- {{ product.description }} -->
                   </h2>
                 </div>
-                <div class="flex items-center mt-4">
-                  <h2 class="">Price: <span>300</span></h2>
+                <div class="flex items-center mt-4 justify-between">
+                  <div class=" ">Price: <span>300</span></div>
+                  <!-- <div class="">
+                    <span
+                      class="border-[2px] rounded-full w-8 h-6 flex items-center justify-center"
+                      >+</span
+                    >
+                  </div> -->
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <hr class="mt-6" />
       </div>
     </div>
   </div>
@@ -84,24 +99,47 @@ const menuShop = ref<MenuShops[]>([
     description: "",
   },
 ]);
+
 const itemShop = ref<Product[]>([
   {
-    name: "Cat",
-    img: "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg",
-    description:
-      "แมว (ชื่อวิทยาศาสตร์: Felis catus) เป็นสปีชีส์สัตว์เลี้ยงของสัตว์เลี้ยงลูกด้วยนมกินเนื้อขนาดเล็ก โดยเป็นแมวสปีชีส์เดียวในวงศ์เสือและแมว ที่ถูกปรับเป็นสัตว์เลี้ยง และมักเรียกเป็น แมวบ้าน",
+    name: "Capuchino",
+    img: "https://allwellhealthcare.com/wp-content/uploads/2023/06/weight-loss-coffee1.jpg",
+    description: "CapuchinoCapuchinoCapuchinoCapuchino",
   },
   {
-    name: "Dog",
-    img: "https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*",
-    description:
-      "หมา หรือคำสุภาพว่า สุนัข เป็นสัตว์ที่สืบเชื้อสายมาจากหมาป่าที่ปรับตัวเป็นสัตว์เลี้ยงที่มักชูหางขึ้นสูง หมาสืบสายพันธุ์จากหมาป่าโบราณที่สูญพันธุ์แล้ว และญาติใกล้ชิดกับหมาที่สุดที่ยังมีชีวิตอยู่คือหมาป่าสมัยใหม่ หมาเป็นสัตว์สปีชีส์แรกที่ถูกปรับเป็นสัตว์เลี้ยงให้กับคนเก็บของป่าล่า",
+    name: "Espesso",
+    img: "https://skeducation.com/wordpress/wp-content/uploads/2016/10/coffee2.jpg",
+    description: "EspessoEspessoEspesso",
   },
   {
-    name: "Duck",
-    img: "https://hips.hearstapps.com/hmg-prod/images/how-to-keep-ducks-call-ducks-1615457181.jpg?resize=2048:*",
-    description:
-      "ป็ด เป็นสัตว์ปีกในวงศ์นกเป็ดน้ำ ปากแบน ตีนแบน ระหว่างนิ้วมีพังผืดยึดติดกันเพื่อสะดวกในการว่ายน้ำ ตัวมีหลายสี เช่น น้ำตาล ขาว เขียว ชมพู ม่วง ขนาดเล็กกว่าห่าน ว่ายน้ำเก่ง กินปลา พืชน้ำและสัตว์เล็ก ๆ มีต้นตระกูลมาจากเป็ดแมลลาร์ด เป็ดเป็นนกน้ำที่มีขนาดเล็กกว่าหงส์และห่าน และสามารถพบได้ทั้งในน้ำจืดและน้ำเค็ม",
+    name: "Macchiato",
+    img: "https://anerdcooks.com/wp-content/uploads/2022/10/caramel_macchiato6.jpg",
+    description: "MacchiatoMacchiatoMacchiato",
+  },
+  {
+    name: "Macchiato",
+    img: "https://anerdcooks.com/wp-content/uploads/2022/10/caramel_macchiato6.jpg",
+    description: "MacchiatoMacchiatoMacchiato",
+  },
+  {
+    name: "Macchiato",
+    img: "https://anerdcooks.com/wp-content/uploads/2022/10/caramel_macchiato6.jpg",
+    description: "MacchiatoMacchiatoMacchiato",
+  },
+  {
+    name: "Macchiato",
+    img: "https://anerdcooks.com/wp-content/uploads/2022/10/caramel_macchiato6.jpg",
+    description: "MacchiatoMacchiatoMacchiato",
+  },
+  {
+    name: "Macchiato",
+    img: "https://anerdcooks.com/wp-content/uploads/2022/10/caramel_macchiato6.jpg",
+    description: "MacchiatoMacchiatoMacchiato",
+  },
+  {
+    name: "Macchiato",
+    img: "https://anerdcooks.com/wp-content/uploads/2022/10/caramel_macchiato6.jpg",
+    description: "MacchiatoMacchiatoMacchiato",
   },
 ]);
 
