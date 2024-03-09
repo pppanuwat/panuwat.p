@@ -12,8 +12,10 @@ export interface MenuShops {
 
 
 export interface ProductLiner {
+    id: number
     name: string
     img:  string | undefined
-    pice: number 
-    color:string
+    pice?: number 
+    color?: string
+    desc?:string
 }

@@ -54,17 +54,16 @@
                 src="https://png.pngtree.com/png-clipart/20230512/original/pngtree-isolated-front-view-cat-on-white-background-png-image_9158426.png"
                 alt="Your Company"
               /> -->
-              <h1 class="text-black font-bold">
-                PP ~ COFFEE <span><i class="fa-solid fa-mug-hot"></i></span>
+              <h1 class="text-black font-bold text-2xl">
+              <span>  Leaning</span>  <span><i class="fa-solid fa-chalkboard"></i></span>
               </h1>
             </div>
-            <div class="flex items-center">
+            <!-- <div class="flex items-center">
               <div
                 class="hidden pl-4 sm:block"
                 v-for="(menu, i) in menuNab"
                 :key="i"
               >
-                <!-- class="hover:border-b-[1px] hover:border-primary w-fit max-lg:w-fit flex justify-center items-center" -->
                 <nuxt-link
                   :to="menu.path"
                   class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-red-500/30 cursor-pointer"
@@ -72,13 +71,13 @@
                   {{ menu.name }}
                 </nuxt-link>
               </div>
-            </div>
+            </div> -->
           </div>
           <div
             class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
           >
             <!-- Profile dropdown -->
-            <div class="relative ml-3">
+            <!-- <div class="relative ml-3">
               <div @click="openProfile">
                 <button
                   type="button"
@@ -130,7 +129,7 @@
                   >Sign out</a
                 >
               </div>
-            </div>
+            </div> -->
           </div>
           <!-- theme -->
           <div>

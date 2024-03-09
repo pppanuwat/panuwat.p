@@ -33,11 +33,13 @@
             >
               $ <span>{{ items.pice }}</span>
             </button>
-            <button
-              class="text-md block font-semibold py-2 px-6 text-green-100 hover:text-white bg-green-400 rounded-lg shadow hover:shadow-md transition duration-300"
-            >
-              Buy
-            </button>
+            <nuxt-link :to="`/shopDetail/${items.id}`">
+              <button
+                class="text-md block font-semibold py-2 px-6 text-green-100 hover:text-white bg-green-400 rounded-lg shadow hover:shadow-md transition duration-300"
+              >
+                Buy
+              </button>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -50,18 +52,21 @@ import { ref } from "vue";
 import type { ProductLiner } from "~/models/product.model";
 const shop = ref<ProductLiner[]>([
   {
+    id: 1,
     name: "Capuchino",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/1200px-A_small_cup_of_coffee.JPG",
     pice: 20,
     color: "red",
   },
   {
+    id: 2,
     name: "Machiato",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfTOO_00KteMxjBezIRrN3Cgvy3q4dsG-vIP8Uwl2uaFnFOC32P_7uoscoG4nHshktgFE&usqp=CAU",
     pice: 34,
     color: "red",
   },
   {
+    id: 3,
     name: "Latte",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlFVXtehrmV86Ute9kjb9CSFqrdEb9_kY5NuXe1zdqih5BaRm-GQcXEeoEDnlYTe6d4TQ&usqp=CAU",
     pice: 55,

@@ -81,6 +81,8 @@ import type { MenuShops, Product } from "~/models/product.model";
 const route = useRoute();
 const router = useRouter();
 
+const acccountS = ref<string>('test')
+
 const activeTab = ref<number>(1);
 const menuShop = ref<MenuShops[]>([
   {

@@ -1,5 +1,5 @@
 <template>
-  <div class="p-8">
+  <div class="p-8" v-if="store.acccount != 'std'">
     <div class="mb-5">
       <div class="flex gap-4 overflow-auto pb-2 text-xs">
         <div v-for="(option, i) in optionShop" :key="i" class="cursor-pointer">
@@ -45,11 +45,28 @@
       </div>
       <ShopPlant />
     </div>
+    <div class="bg-red-500 mt-4 h-[200px]"></div>
+  </div>
+  <div v-else class="p-8">
+    <div>
+      <div class="text-xl pl-4 font-bold mb-2">
+        <span>Section 1 : language </span>
+      </div>
+      <LeaningCourses />
+    </div>
+    <div class="mt-4">
+      <div class="text-xl pl-4 font-bold mb-2">
+        <span>Section 2 : Framework</span>
+      </div>
+      <LeaningFramwork />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
+import { useStore } from "~/store/main";
+const store = useStore();
 
 const hoverSort = ref<string>("");
 const optionShop = [
@@ -84,6 +101,8 @@ const hover = async (value: any, index: any) => {
     hoverSort.value = index;
   }
 };
+
+// Leaning
 </script>
 
 <style lang="scss" scoped>
